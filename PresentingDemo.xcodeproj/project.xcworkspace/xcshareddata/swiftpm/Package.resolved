@@ -3,10 +3,10 @@
     {
       "identity" : "presenting",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/achi113s/Presenting.git",
+      "location" : "https://github.com/JamesSedlacek/Presenting.git",
       "state" : {
-        "branch" : "newConfirmationDialog",
-        "revision" : "0d348f5a962fd567b946dd91ee82b2e66594a661"
+        "branch" : "main",
+        "revision" : "7df19e1c0bb04bd20375ff967ceed7338136624e"
       }
     }
   ],

@@ -8,12 +8,6 @@
 import Presenting
 import SwiftUI
 
-struct TestData {
-    let button1name = "Button1"
-    let button2name = "Button2"
-    let message = "Message!"
-}
-
 struct ContentView: View {
     @State private var dialogDetail: TestData? = nil
     @State private var showNativeDataDialog: Bool = false

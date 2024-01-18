@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		443D3D9E2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443D3D9D2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift */; };
 		449106962B505E0100FB2019 /* PresentingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449106952B505E0100FB2019 /* PresentingDemoApp.swift */; };
 		449106982B505E0100FB2019 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449106972B505E0100FB2019 /* ContentView.swift */; };
 		4491069A2B505E0200FB2019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449106992B505E0200FB2019 /* Assets.xcassets */; };
 		4491069D2B505E0200FB2019 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4491069C2B505E0200FB2019 /* Preview Assets.xcassets */; };
 		449106A42B505E1700FB2019 /* ExampleRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449106A32B505E1700FB2019 /* ExampleRoute.swift */; };
-		449106A72B505E3A00FB2019 /* Presenting in Frameworks */ = {isa = PBXBuildFile; productRef = 449106A62B505E3A00FB2019 /* Presenting */; };
 		449106A92B505E9E00FB2019 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449106A82B505E9E00FB2019 /* DetailView.swift */; };
 		449106AB2B505EEB00FB2019 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449106AA2B505EEB00FB2019 /* SettingsView.swift */; };
-		44E658252B55A9FA00F849A1 /* BasicPresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E658242B55A9FA00F849A1 /* BasicPresenterView.swift */; };
+		44B915722B59BB4B005C5364 /* Presenting in Frameworks */ = {isa = PBXBuildFile; productRef = 44B915712B59BB4B005C5364 /* Presenting */; };
+		44E658252B55A9FA00F849A1 /* BasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E658242B55A9FA00F849A1 /* BasicView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		443D3D9D2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialogTestData.swift; sourceTree = "<group>"; };
 		449106922B505E0100FB2019 /* PresentingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PresentingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449106952B505E0100FB2019 /* PresentingDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingDemoApp.swift; sourceTree = "<group>"; };
 		449106972B505E0100FB2019 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,7 +29,7 @@
 		449106A32B505E1700FB2019 /* ExampleRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRoute.swift; sourceTree = "<group>"; };
 		449106A82B505E9E00FB2019 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		449106AA2B505EEB00FB2019 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		44E658242B55A9FA00F849A1 /* BasicPresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicPresenterView.swift; sourceTree = "<group>"; };
+		44E658242B55A9FA00F849A1 /* BasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,13 +37,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				449106A72B505E3A00FB2019 /* Presenting in Frameworks */,
+				44B915722B59BB4B005C5364 /* Presenting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		443D3D9F2B59BCB000A9CF24 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				449106A32B505E1700FB2019 /* ExampleRoute.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		443D3DA02B59BCBA00A9CF24 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				449106972B505E0100FB2019 /* ContentView.swift */,
+				449106A82B505E9E00FB2019 /* DetailView.swift */,
+				449106AA2B505EEB00FB2019 /* SettingsView.swift */,
+				44E658242B55A9FA00F849A1 /* BasicView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		443D3DA12B59BD2800A9CF24 /* SupportData */ = {
+			isa = PBXGroup;
+			children = (
+				443D3D9D2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift */,
+			);
+			path = SupportData;
+			sourceTree = "<group>";
+		};
 		449106892B505E0100FB2019 = {
 			isa = PBXGroup;
 			children = (
@@ -62,13 +91,11 @@
 			isa = PBXGroup;
 			children = (
 				449106952B505E0100FB2019 /* PresentingDemoApp.swift */,
-				449106972B505E0100FB2019 /* ContentView.swift */,
+				443D3D9F2B59BCB000A9CF24 /* Routes */,
+				443D3DA02B59BCBA00A9CF24 /* Views */,
+				443D3DA12B59BD2800A9CF24 /* SupportData */,
 				449106992B505E0200FB2019 /* Assets.xcassets */,
 				4491069B2B505E0200FB2019 /* Preview Content */,
-				449106A32B505E1700FB2019 /* ExampleRoute.swift */,
-				449106A82B505E9E00FB2019 /* DetailView.swift */,
-				449106AA2B505EEB00FB2019 /* SettingsView.swift */,
-				44E658242B55A9FA00F849A1 /* BasicPresenterView.swift */,
 			);
 			path = PresentingDemo;
 			sourceTree = "<group>";
@@ -98,7 +125,7 @@
 			);
 			name = PresentingDemo;
 			packageProductDependencies = (
-				449106A62B505E3A00FB2019 /* Presenting */,
+				44B915712B59BB4B005C5364 /* Presenting */,
 			);
 			productName = PresentingDemo;
 			productReference = 449106922B505E0100FB2019 /* PresentingDemo.app */;
@@ -129,7 +156,7 @@
 			);
 			mainGroup = 449106892B505E0100FB2019;
 			packageReferences = (
-				449106A52B505E3A00FB2019 /* XCRemoteSwiftPackageReference "Presenting" */,
+				44B915702B59BB4B005C5364 /* XCRemoteSwiftPackageReference "Presenting" */,
 			);
 			productRefGroup = 449106932B505E0100FB2019 /* Products */;
 			projectDirPath = "";
@@ -158,9 +185,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				449106A42B505E1700FB2019 /* ExampleRoute.swift in Sources */,
+				443D3D9E2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift in Sources */,
 				449106A92B505E9E00FB2019 /* DetailView.swift in Sources */,
 				449106982B505E0100FB2019 /* ContentView.swift in Sources */,
-				44E658252B55A9FA00F849A1 /* BasicPresenterView.swift in Sources */,
+				44E658252B55A9FA00F849A1 /* BasicView.swift in Sources */,
 				449106962B505E0100FB2019 /* PresentingDemoApp.swift in Sources */,
 				449106AB2B505EEB00FB2019 /* SettingsView.swift in Sources */,
 			);
@@ -299,11 +327,13 @@
 				DEVELOPMENT_TEAM = E24P6RF94S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,11 +358,13 @@
 				DEVELOPMENT_TEAM = E24P6RF94S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -370,20 +402,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		449106A52B505E3A00FB2019 /* XCRemoteSwiftPackageReference "Presenting" */ = {
+		44B915702B59BB4B005C5364 /* XCRemoteSwiftPackageReference "Presenting" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/achi113s/Presenting.git";
+			repositoryURL = "https://github.com/JamesSedlacek/Presenting.git";
 			requirement = {
-				branch = newConfirmationDialog;
+				branch = main;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		449106A62B505E3A00FB2019 /* Presenting */ = {
+		44B915712B59BB4B005C5364 /* Presenting */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 449106A52B505E3A00FB2019 /* XCRemoteSwiftPackageReference "Presenting" */;
+			package = 44B915702B59BB4B005C5364 /* XCRemoteSwiftPackageReference "Presenting" */;
 			productName = Presenting;
 		};
 /* End XCSwiftPackageProductDependency section */

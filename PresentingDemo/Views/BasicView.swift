@@ -8,13 +8,12 @@
 import Presenting
 import SwiftUI
 
-struct BasicPresenterView: View {
+struct BasicView: View {
     @State private var dialogDetail: TestData? = TestData()
     @State private var showNativeDataDialog: Bool = false
 
     var body: some View {
         BasicPresentingView { presenter in
-
             VStack {
                 Group {
                     Button("Show Alert") {
@@ -62,19 +61,10 @@ struct BasicPresenterView: View {
                 .fontWeight(.semibold)
                 .fontDesign(.rounded)
             }
-            .confirmationDialog(
-                Text("Native Confirm Dialog with Data"),
-                isPresented: $showNativeDataDialog,
-                titleVisibility: .automatic, presenting: dialogDetail) { dialogDetail in
-                    Button(dialogDetail.button1name) {}
-                    Button(dialogDetail.button2name) {}
-                } message: { dialogDetail in
-                    Text(dialogDetail.message)
-                }
         }
     }
 }
 
 #Preview {
-    BasicPresenterView()
+    BasicView()
 }
