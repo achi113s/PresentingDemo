@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "presenting",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/achi113s/Presenting.git",
+      "state" : {
+        "branch" : "newConfirmationDialog",
+        "revision" : "0d348f5a962fd567b946dd91ee82b2e66594a661"
+      }
+    }
+  ],
+  "version" : 2
+}
