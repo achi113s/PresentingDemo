@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		443D3D9E2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443D3D9D2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift */; };
+		443D3DA32B59BDB900A9CF24 /* View-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443D3DA22B59BDB900A9CF24 /* View-Extensions.swift */; };
+		443D3DA62B59C1AF00A9CF24 /* DetailViewModelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443D3DA52B59C1AF00A9CF24 /* DetailViewModelling.swift */; };
+		443D3DA82B59C1CD00A9CF24 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443D3DA72B59C1CD00A9CF24 /* DetailViewModel.swift */; };
 		449106962B505E0100FB2019 /* PresentingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449106952B505E0100FB2019 /* PresentingDemoApp.swift */; };
 		449106982B505E0100FB2019 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449106972B505E0100FB2019 /* ContentView.swift */; };
 		4491069A2B505E0200FB2019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449106992B505E0200FB2019 /* Assets.xcassets */; };
@@ -21,6 +24,9 @@
 
 /* Begin PBXFileReference section */
 		443D3D9D2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialogTestData.swift; sourceTree = "<group>"; };
+		443D3DA22B59BDB900A9CF24 /* View-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View-Extensions.swift"; sourceTree = "<group>"; };
+		443D3DA52B59C1AF00A9CF24 /* DetailViewModelling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelling.swift; sourceTree = "<group>"; };
+		443D3DA72B59C1CD00A9CF24 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		449106922B505E0100FB2019 /* PresentingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PresentingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449106952B505E0100FB2019 /* PresentingDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingDemoApp.swift; sourceTree = "<group>"; };
 		449106972B505E0100FB2019 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,9 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				449106972B505E0100FB2019 /* ContentView.swift */,
+				44E658242B55A9FA00F849A1 /* BasicView.swift */,
 				449106A82B505E9E00FB2019 /* DetailView.swift */,
 				449106AA2B505EEB00FB2019 /* SettingsView.swift */,
-				44E658242B55A9FA00F849A1 /* BasicView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -69,6 +75,15 @@
 				443D3D9D2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift */,
 			);
 			path = SupportData;
+			sourceTree = "<group>";
+		};
+		443D3DA42B59C1A300A9CF24 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				443D3DA52B59C1AF00A9CF24 /* DetailViewModelling.swift */,
+				443D3DA72B59C1CD00A9CF24 /* DetailViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		449106892B505E0100FB2019 = {
@@ -93,9 +108,11 @@
 				449106952B505E0100FB2019 /* PresentingDemoApp.swift */,
 				443D3D9F2B59BCB000A9CF24 /* Routes */,
 				443D3DA02B59BCBA00A9CF24 /* Views */,
+				443D3DA42B59C1A300A9CF24 /* ViewModels */,
 				443D3DA12B59BD2800A9CF24 /* SupportData */,
 				449106992B505E0200FB2019 /* Assets.xcassets */,
 				4491069B2B505E0200FB2019 /* Preview Content */,
+				443D3DA22B59BDB900A9CF24 /* View-Extensions.swift */,
 			);
 			path = PresentingDemo;
 			sourceTree = "<group>";
@@ -184,11 +201,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				443D3DA32B59BDB900A9CF24 /* View-Extensions.swift in Sources */,
 				449106A42B505E1700FB2019 /* ExampleRoute.swift in Sources */,
 				443D3D9E2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift in Sources */,
+				443D3DA82B59C1CD00A9CF24 /* DetailViewModel.swift in Sources */,
 				449106A92B505E9E00FB2019 /* DetailView.swift in Sources */,
 				449106982B505E0100FB2019 /* ContentView.swift in Sources */,
 				44E658252B55A9FA00F849A1 /* BasicView.swift in Sources */,
+				443D3DA62B59C1AF00A9CF24 /* DetailViewModelling.swift in Sources */,
 				449106962B505E0100FB2019 /* PresentingDemoApp.swift in Sources */,
 				449106AB2B505EEB00FB2019 /* SettingsView.swift in Sources */,
 			);

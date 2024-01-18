@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct DetailView<ViewModel: DetailViewModelling>: View {
+    @EnvironmentObject private var viewModel: ViewModel
+
     var body: some View {
         VStack(spacing: 10) {
-            Image(systemName: "doc.text.magnifyingglass")
+            Image(systemName: viewModel.image)
                 .foregroundStyle(.blue)
                 .fontWeight(.bold)
                 .font(.system(size: 36))
-            Text("This is a detail view.")
+            Text(viewModel.detailMessage)
                 .font(.headline)
                 .fontWeight(.semibold)
                 .fontDesign(.rounded)
@@ -23,5 +25,6 @@ struct DetailView: View {
 }
 
 #Preview {
-    DetailView()
+    DetailView<DetailViewModel>()
+        .environmentObject(DetailViewModel())
 }
