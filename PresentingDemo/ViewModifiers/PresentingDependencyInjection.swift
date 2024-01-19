@@ -4,6 +4,9 @@
 //
 //  Created by Giorgio Latour on 1/18/24.
 //
+//  Idea for using a view modifier to inject the
+//  presenter and view model into the view by
+//  James Sedlacek and modified for this project.
 
 import Presenting
 import SwiftUI
