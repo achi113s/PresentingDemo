@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		443D3D9E2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443D3D9D2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift */; };
-		443D3DA32B59BDB900A9CF24 /* View-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443D3DA22B59BDB900A9CF24 /* View-Extensions.swift */; };
+		440CBC402B5ADD370078A786 /* PresentingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CBC3F2B5ADD370078A786 /* PresentingViewModel.swift */; };
+		440CBC422B5AE87D0078A786 /* Button-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CBC412B5AE87D0078A786 /* Button-Extensions.swift */; };
+		443D3D9E2B59BC8300A9CF24 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443D3D9D2B59BC8300A9CF24 /* TestData.swift */; };
+		443D3DA32B59BDB900A9CF24 /* PresentingDependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443D3DA22B59BDB900A9CF24 /* PresentingDependencyInjection.swift */; };
 		443D3DA62B59C1AF00A9CF24 /* DetailViewModelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443D3DA52B59C1AF00A9CF24 /* DetailViewModelling.swift */; };
 		443D3DA82B59C1CD00A9CF24 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443D3DA72B59C1CD00A9CF24 /* DetailViewModel.swift */; };
 		449106962B505E0100FB2019 /* PresentingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449106952B505E0100FB2019 /* PresentingDemoApp.swift */; };
@@ -23,8 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		443D3D9D2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialogTestData.swift; sourceTree = "<group>"; };
-		443D3DA22B59BDB900A9CF24 /* View-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View-Extensions.swift"; sourceTree = "<group>"; };
+		440CBC3F2B5ADD370078A786 /* PresentingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingViewModel.swift; sourceTree = "<group>"; };
+		440CBC412B5AE87D0078A786 /* Button-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button-Extensions.swift"; sourceTree = "<group>"; };
+		443D3D9D2B59BC8300A9CF24 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		443D3DA22B59BDB900A9CF24 /* PresentingDependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingDependencyInjection.swift; sourceTree = "<group>"; };
 		443D3DA52B59C1AF00A9CF24 /* DetailViewModelling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelling.swift; sourceTree = "<group>"; };
 		443D3DA72B59C1CD00A9CF24 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		449106922B505E0100FB2019 /* PresentingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PresentingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,7 +76,7 @@
 		443D3DA12B59BD2800A9CF24 /* SupportData */ = {
 			isa = PBXGroup;
 			children = (
-				443D3D9D2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift */,
+				443D3D9D2B59BC8300A9CF24 /* TestData.swift */,
 			);
 			path = SupportData;
 			sourceTree = "<group>";
@@ -82,6 +86,7 @@
 			children = (
 				443D3DA52B59C1AF00A9CF24 /* DetailViewModelling.swift */,
 				443D3DA72B59C1CD00A9CF24 /* DetailViewModel.swift */,
+				440CBC3F2B5ADD370078A786 /* PresentingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -112,7 +117,8 @@
 				443D3DA12B59BD2800A9CF24 /* SupportData */,
 				449106992B505E0200FB2019 /* Assets.xcassets */,
 				4491069B2B505E0200FB2019 /* Preview Content */,
-				443D3DA22B59BDB900A9CF24 /* View-Extensions.swift */,
+				443D3DA22B59BDB900A9CF24 /* PresentingDependencyInjection.swift */,
+				440CBC412B5AE87D0078A786 /* Button-Extensions.swift */,
 			);
 			path = PresentingDemo;
 			sourceTree = "<group>";
@@ -201,13 +207,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				443D3DA32B59BDB900A9CF24 /* View-Extensions.swift in Sources */,
+				443D3DA32B59BDB900A9CF24 /* PresentingDependencyInjection.swift in Sources */,
 				449106A42B505E1700FB2019 /* ExampleRoute.swift in Sources */,
-				443D3D9E2B59BC8300A9CF24 /* ConfirmationDialogTestData.swift in Sources */,
+				443D3D9E2B59BC8300A9CF24 /* TestData.swift in Sources */,
 				443D3DA82B59C1CD00A9CF24 /* DetailViewModel.swift in Sources */,
 				449106A92B505E9E00FB2019 /* DetailView.swift in Sources */,
+				440CBC402B5ADD370078A786 /* PresentingViewModel.swift in Sources */,
 				449106982B505E0100FB2019 /* ContentView.swift in Sources */,
 				44E658252B55A9FA00F849A1 /* BasicView.swift in Sources */,
+				440CBC422B5AE87D0078A786 /* Button-Extensions.swift in Sources */,
 				443D3DA62B59C1AF00A9CF24 /* DetailViewModelling.swift in Sources */,
 				449106962B505E0100FB2019 /* PresentingDemoApp.swift in Sources */,
 				449106AB2B505EEB00FB2019 /* SettingsView.swift in Sources */,

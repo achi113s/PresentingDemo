@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DetailViewModelling: ObservableObject {
-    var image: String { get set }
-    var detailMessage: String { get set }
-}
+//protocol DetailViewModelling: ObservableObject {
+//    var image: String { get set }
+//    var detailMessage: String { get set }
+//}

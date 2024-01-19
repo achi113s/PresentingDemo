@@ -10,25 +10,31 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var dialogDetail: TestData? = nil
-    @State private var showNativeDataDialog: Bool = false
 
     var body: some View {
         PresentingView(ExampleRoute.self) { presenter in
+            NavigationStack {
                 VStack {
                     Group {
-                        Button("Go to Settings") {
+                        Button("Show Alert") {
+                            presenter.presentAlert(
+                                Alert(title: Text("Test Alert"),
+                                      message: Text("Are you liking the Presenting library?"),
+                                      primaryButton: .default(Text("Absolutely")),
+                                      secondaryButton: .destructive(Text("No"))
+                                     )
+                            )
+                        }
+
+                        Button("Present Settings Sheet") {
                             presenter.presentSheet(.settings)
                         }
 
-                        Button("Show Alert") {
-                            presenter.presentAlert(Alert(title: Text("This is a test!")))
-                        }
-
-                        Button("Show Config Dialog") {
+                        Button("Show Confirmation Dialog") {
                             presenter.presentConfirmationDialog(
                                 ConfirmationDialog(Text("Test")) {
                                     Button("Test Button") {}
-                                    Button("Test Button2") {}
+                                    Button("Test Button 2") {}
                                 } message: {
                                     VStack {
                                         Text("This is a message!")
@@ -37,11 +43,15 @@ struct ContentView: View {
                             )
                         }
 
-                        Button("Show Config Dialog Data") {
+                        Button("Dismiss Confirmation Dialog") {
+                            presenter.dismissConfirmationDialog()
+                        }
+
+                        Button("Show Confirmation Dialog using Data") {
                             presenter.presentConfirmationDialog(
                                 ConfirmationDialog(
                                     Text("Presenting"),
-                                    titleVisibility: .automatic, presenting: dialogDetail, 
+                                    titleVisibility: .automatic, presenting: dialogDetail,
                                     actions: { dialogDetail in
                                         Button(dialogDetail.button1name) {}
                                         Button(dialogDetail.button2name) {}
@@ -51,31 +61,24 @@ struct ContentView: View {
                                 )
                             )
                         }
-
-                        Button("Show Native Config Dialog Data") {
-                            showNativeDataDialog = true
-                        }
-
-                        Button("Dismiss Confirmation Dialog") {
-                            presenter.dismissConfirmationDialog()
-                        }
                     }
-                    .buttonStyle(.borderedProminent)
-                    .buttonBorderShape(.roundedRectangle(radius: 15))
-                    .fontWeight(.semibold)
-                    .fontDesign(.rounded)
+                    .presentingDemoButton()
                 }
-                .confirmationDialog(
-                    Text("Native Confirm Dialog with Data"),
-                    isPresented: $showNativeDataDialog,
-                    titleVisibility: .automatic, presenting: dialogDetail) { dialogDetail in
-                        Button(dialogDetail.button1name) {}
-                        Button(dialogDetail.button2name) {}
-                    } message: { dialogDetail in
-                        Text(dialogDetail.message)
-                    }
-
+                .toolbar(content: {
+                    toolbarView
+                })
             }
+        }
+    }
+
+    private var toolbarView: some ToolbarContent {
+        Group {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Text("Presenting Demo")
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 32, weight: .bold))
+            }
+        }
     }
 }
 

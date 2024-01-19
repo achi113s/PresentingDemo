@@ -5,8 +5,8 @@
 //  Created by Giorgio Latour on 1/11/24.
 //
 
-import SwiftUI
 import Presenting
+import SwiftUI
 
 struct SettingsView: View {
     // The Presenter object is injected into the environment
@@ -15,23 +15,35 @@ struct SettingsView: View {
     @EnvironmentObject private var presenter: Presenter<ExampleRoute>
     
     var body: some View {
-        VStack(spacing: 10) {
-            Image(systemName: "gear")
-                .foregroundStyle(.blue)
-                .fontWeight(.bold)
-                .font(.system(size: 36))
-            Text("This is a settings view.")
-                .font(.headline)
-                .fontWeight(.semibold)
-                .fontDesign(.rounded)
-            
-            Button("Go to Detail") {
-                presenter.presentSheet(.detail)
+        NavigationStack {
+            VStack(spacing: 10) {
+                VStack(spacing: 10) {
+                    Image(systemName: "gear")
+                        .foregroundStyle(.blue)
+                        .fontWeight(.bold)
+                        .font(.system(size: 36))
+                    Text("This is a settings view.")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .fontDesign(.rounded)
+                    
+                    Button("Go to Detail") {
+                        presenter.presentSheet(.detail)
+                    }
+                    .presentingDemoButton()
+                }
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            presenter.dismissSheet()
+                        } label: {
+                            Text("Exit")
+                                .fontDesign(.rounded)
+                                .fontWeight(.semibold)
+                        }
+                    }
+                }
             }
-            .buttonStyle(.borderedProminent)
-            .buttonBorderShape(.roundedRectangle(radius: 15))
-            .fontWeight(.semibold)
-            .fontDesign(.rounded)
         }
     }
 }

@@ -56,10 +56,7 @@ struct BasicView: View {
                         presenter.dismissConfirmationDialog()
                     }
                 }
-                .buttonStyle(.borderedProminent)
-                .buttonBorderShape(.roundedRectangle(radius: 15))
-                .fontWeight(.semibold)
-                .fontDesign(.rounded)
+                .presentingDemoButton()
             }
         }
     }
