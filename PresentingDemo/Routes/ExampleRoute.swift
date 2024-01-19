@@ -11,14 +11,17 @@ import SwiftUI
 enum ExampleRoute: Presentable {
     case detail
     case settings
+    case lockedView
 
     var body: some View {
         switch self {
         case .detail:
-            DetailView()
+            DetailView<DetailViewModel>()
                 .inject(DetailViewModel())
         case .settings:
             SettingsView()
+        case .lockedView:
+            LockedView()
         }
     }
 }

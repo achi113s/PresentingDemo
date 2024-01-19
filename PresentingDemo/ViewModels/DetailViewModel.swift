@@ -8,7 +8,7 @@
 import Presenting
 import SwiftUI
 
-final class DetailViewModel: PresentingViewModel, ObservableObject {
+final class DetailViewModel: PresentingViewModel, DetailViewModelling, ObservableObject {
     typealias Destination = ExampleRoute
 
     var presenter: Presenter<ExampleRoute>?

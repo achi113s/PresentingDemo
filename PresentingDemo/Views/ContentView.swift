@@ -9,12 +9,12 @@ import Presenting
 import SwiftUI
 
 struct ContentView: View {
-    @State private var dialogDetail: TestData? = nil
+    @State private var dialogDetail: TestData? = TestData()
 
     var body: some View {
         PresentingView(ExampleRoute.self) { presenter in
             NavigationStack {
-                VStack {
+                VStack(spacing: 15) {
                     Group {
                         Button("Show Alert") {
                             presenter.presentAlert(
@@ -28,6 +28,10 @@ struct ContentView: View {
 
                         Button("Present Settings Sheet") {
                             presenter.presentSheet(.settings)
+                        }
+
+                        Button("Present Full Screen Cover") {
+                            presenter.presentFullScreenCover(.lockedView)
                         }
 
                         Button("Show Confirmation Dialog") {
@@ -76,7 +80,7 @@ struct ContentView: View {
             ToolbarItem(placement: .navigationBarLeading) {
                 Text("Presenting Demo")
                     .multilineTextAlignment(.center)
-                    .font(.system(size: 32, weight: .bold))
+                    .font(.system(size: 32, weight: .bold, design: .rounded))
             }
         }
     }

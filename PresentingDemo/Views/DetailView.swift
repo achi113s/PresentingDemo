@@ -8,12 +8,12 @@
 import Presenting
 import SwiftUI
 
-struct DetailView: View {
+struct DetailView<ViewModel: DetailViewModelling>: View {
     @EnvironmentObject private var viewModel: DetailViewModel
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 10) {
+            VStack(spacing: 15) {
                 Image(systemName: viewModel.image)
                     .foregroundStyle(.blue)
                     .fontWeight(.bold)

@@ -14,7 +14,7 @@ struct BasicView: View {
 
     var body: some View {
         BasicPresentingView { presenter in
-            VStack {
+            VStack(spacing: 15) {
                 Group {
                     Button("Show Alert") {
                         presenter.presentAlert(Alert(title: Text("This is a test!")))
