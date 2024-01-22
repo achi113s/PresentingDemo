@@ -26,11 +26,19 @@ struct ContentView: View {
                             )
                         }
 
-                        Button("Present Settings Sheet") {
+                        Button("Show Toast") {
+                            presenter.presentToast(
+                                on: .bottom,
+                                .success(message: "Success!"),
+                                isAutoDismissed: true
+                            )
+                        }
+
+                        Button("Show Settings Sheet") {
                             presenter.presentSheet(.settings)
                         }
 
-                        Button("Present Full Screen Cover") {
+                        Button("Show Full Screen Cover") {
                             presenter.presentFullScreenCover(.lockedView)
                         }
 
