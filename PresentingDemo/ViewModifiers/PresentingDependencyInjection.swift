@@ -11,7 +11,7 @@
 import Presenting
 import SwiftUI
 
-struct DependencyInjectingModifier<M: PresentingViewModel & ObservableObject>: ViewModifier {
+struct DependencyInjectingModifier<M: PresentingViewModelling & ObservableObject>: ViewModifier {
     @EnvironmentObject private var presenter: Presenter<M.PresentableView>
 
     private let viewModel: M
@@ -32,7 +32,7 @@ struct DependencyInjectingModifier<M: PresentingViewModel & ObservableObject>: V
 }
 
 extension View {
-    func inject<M: PresentingViewModel & ObservableObject>(_ viewModel: M) -> some View {
+    func inject<M: PresentingViewModelling & ObservableObject>(_ viewModel: M) -> some View {
         modifier(DependencyInjectingModifier(viewModel: viewModel))
     }
 }

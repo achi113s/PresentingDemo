@@ -8,7 +8,7 @@
 import Foundation
 import Presenting
 
-protocol PresentingViewModel: AnyObject {
+protocol PresentingViewModelling: AnyObject {
     associatedtype PresentableView: Presentable
     var presenter: Presenter<PresentableView>? { get set }
 }

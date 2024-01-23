@@ -8,7 +8,7 @@
 import Presenting
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     @State private var dialogDetail: TestData? = TestData()
 
     private let buttonHeight: CGFloat = 35
@@ -38,6 +38,7 @@ struct ContentView: View {
                                     .frame(maxWidth: .infinity)
                                     .frame(height: buttonHeight)
                             }
+                            .accessibilityIdentifier("ShowAlertButton")
 
                             Button {
                                 presenter.presentSheet(.settings)
@@ -180,5 +181,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    HomeView()
 }

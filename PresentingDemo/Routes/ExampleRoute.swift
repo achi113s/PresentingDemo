@@ -18,10 +18,13 @@ enum ExampleRoute: Presentable {
         case .detail:
             DetailView<DetailViewModel>()
                 .inject(DetailViewModel())
+                .accessibilityIdentifier("DetailSheet")
         case .settings:
             SettingsView()
+                .accessibilityIdentifier("SettingsSheet")
         case .lockedView:
             LockedView()
+                .accessibilityIdentifier("LockedFullScreenCover")
         }
     }
 }
