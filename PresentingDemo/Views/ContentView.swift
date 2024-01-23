@@ -12,18 +12,24 @@ struct ContentView: View {
     @State private var dialogDetail: TestData? = TestData()
 
     private let buttonHeight: CGFloat = 35
+    private let vstackSpacing: CGFloat = 15
 
     var body: some View {
         PresentingView(ExampleRoute.self) { presenter in
             NavigationStack {
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 20) {
+                    VStack(alignment: .leading, spacing: vstackSpacing) {
+                        Text("Alerts, Sheets, Dialogs")
+                            .font(.headline)
+                            .fontWeight(.semibold)
+                            .fontDesign(.rounded)
+
                         Group {
                             Button {
                                 presenter.presentAlert(
                                     Alert(title: Text("Test Alert"),
                                           message: Text("Are you liking the Presenting library?"),
-                                          primaryButton: .default(Text("Absolutely")),
+                                          primaryButton: .default(Text("Yes")),
                                           secondaryButton: .destructive(Text("No"))
                                          )
                                 )
@@ -97,23 +103,27 @@ struct ContentView: View {
                         .presentingDemoButton()
 
                         Text("Toasts")
+                            .font(.headline)
+                            .fontWeight(.semibold)
+                            .fontDesign(.rounded)
                         // This layout is terrible. Might have to write a custom Layout.
                         Grid {
                             GridRow {
-                                ForEach(DefaultToasts.allCases.prefix(3)) { toast in
+                                ForEach(DefaultToasts.allCases[..<3]) { toast in
                                     Button {
                                         presenter.presentToast(
                                             on: .bottom,
                                             Toast(
                                                 icon: toast.sfSymbol,
                                                 color: toast.color,
-                                                message: toast.id                                            )
+                                                message: toast.id
+                                            )
                                         )
                                     } label: {
                                         VStack {
                                             toast.sfSymbol
 
-                                            Text("\(toast.id) Toast")
+                                            Text("\(toast.id)")
                                         }
                                         .frame(width: 90, height: buttonHeight + 40)
                                     }
@@ -123,20 +133,21 @@ struct ContentView: View {
                             }
 
                             GridRow {
-                                ForEach(DefaultToasts.allCases.suffix(from: 3)) { toast in
+                                ForEach(DefaultToasts.allCases[3...5]) { toast in
                                     Button {
                                         presenter.presentToast(
                                             on: .bottom,
                                             Toast(
                                                 icon: toast.sfSymbol,
                                                 color: toast.color,
-                                                message: toast.id                                            )
+                                                message: toast.id
+                                            )
                                         )
                                     } label: {
                                         VStack {
                                             toast.sfSymbol
 
-                                            Text("\(toast.id) Toast")
+                                            Text("\(toast.id)")
                                         }
                                         .frame(width: 90, height: buttonHeight + 40)
                                     }
@@ -160,7 +171,9 @@ struct ContentView: View {
             ToolbarItem(placement: .navigationBarLeading) {
                 Text("Presenting Demo")
                     .multilineTextAlignment(.center)
-                    .font(.system(size: 32, weight: .bold, design: .rounded))
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .fontDesign(.rounded)
             }
         }
     }
