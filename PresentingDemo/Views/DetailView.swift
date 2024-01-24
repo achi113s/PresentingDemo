@@ -8,8 +8,17 @@
 import Presenting
 import SwiftUI
 
-struct DetailView<ViewModel: DetailViewModelling>: View {
-    @EnvironmentObject private var viewModel: DetailViewModel
+struct DetailView: View {
+    // The Presenter object is injected into the environment
+    // when creating either a PresenterView or BasicPresenterView.
+    // So, we can access the presenter in our sheet like so.
+    @EnvironmentObject private var presenter: Presenter<ExampleRoute>
+
+    @ObservedObject private var viewModel: DetailViewModel
+
+    init(viewModel: DetailViewModel) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         NavigationStack {
@@ -23,15 +32,15 @@ struct DetailView<ViewModel: DetailViewModelling>: View {
                     .fontWeight(.semibold)
                     .fontDesign(.rounded)
 
-                Button("Go to Settings") {
-                    viewModel.goToSettingsTapped()
+                Button("Show Detail Sheet") {
+                    presenter.presentSheet(.settings)
                 }
                 .presentingDemoButton()
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        viewModel.dismissSheetTapped()
+                        presenter.dismissSheet()
                     } label: {
                         Text("Exit")
                             .fontDesign(.rounded)

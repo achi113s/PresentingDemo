@@ -22,13 +22,6 @@
         "identifier" : "44FC74B52B604F8100B2F19A",
         "name" : "PresentingDemoUITests"
       }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:PresentingDemo.xcodeproj",
-        "identifier" : "44FC74C42B604FF000B2F19A",
-        "name" : "PresentingDemoTests"
-      }
     }
   ],
   "version" : 1

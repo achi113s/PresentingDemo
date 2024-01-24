@@ -16,8 +16,7 @@ enum ExampleRoute: Presentable {
     var body: some View {
         switch self {
         case .detail:
-            DetailView<DetailViewModel>()
-                .inject(DetailViewModel())
+            DetailView(viewModel: DetailViewModel())
                 .accessibilityIdentifier("DetailSheet")
         case .settings:
             SettingsView()

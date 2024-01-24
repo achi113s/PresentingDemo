@@ -8,11 +8,7 @@
 import Presenting
 import SwiftUI
 
-final class DetailViewModel: PresentingViewModelling, DetailViewModelling, ObservableObject {
-    typealias Destination = ExampleRoute
-
-    var presenter: Presenter<ExampleRoute>?
-
+final class DetailViewModel: ObservableObject {
     var image: String
     var detailMessage: String
 
@@ -20,13 +16,5 @@ final class DetailViewModel: PresentingViewModelling, DetailViewModelling, Obser
          detailMessage: String = "This is a detail screen.") {
         self.image = image
         self.detailMessage = detailMessage
-    }
-
-    func goToSettingsTapped() {
-        presenter?.presentSheet(.settings)
-    }
-
-    func dismissSheetTapped() {
-        presenter?.dismissSheet()
     }
 }

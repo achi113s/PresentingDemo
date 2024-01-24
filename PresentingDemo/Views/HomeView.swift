@@ -85,8 +85,9 @@ struct HomeView: View {
                             Button {
                                 presenter.presentConfirmationDialog(
                                     ConfirmationDialog(
-                                        Text("Presenting"),
-                                        titleVisibility: .automatic, presenting: dialogDetail,
+                                        Text("Using Data"),
+                                        titleVisibility: .visible,
+                                        presenting: dialogDetail,
                                         actions: { dialogDetail in
                                             Button(dialogDetail.button1name) {}
                                             Button(dialogDetail.button2name) {}
@@ -107,7 +108,7 @@ struct HomeView: View {
                             .font(.headline)
                             .fontWeight(.semibold)
                             .fontDesign(.rounded)
-                        // This layout is terrible. Might have to write a custom Layout.
+                        
                         Grid {
                             GridRow {
                                 ForEach(DefaultToasts.allCases[..<3]) { toast in

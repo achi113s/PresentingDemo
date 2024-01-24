@@ -11,7 +11,7 @@ import SwiftUI
 struct SettingsView: View {
     // The Presenter object is injected into the environment
     // when creating either a PresenterView or BasicPresenterView.
-    // So, we can access the presenter in our subviews like so.
+    // So, we can access the presenter in our sheet like so.
     @EnvironmentObject private var presenter: Presenter<ExampleRoute>
 
     var body: some View {
@@ -26,7 +26,7 @@ struct SettingsView: View {
                     .fontWeight(.semibold)
                     .fontDesign(.rounded)
 
-                Button("Go to Detail") {
+                Button("Show Detail Sheet") {
                     presenter.presentSheet(.detail)
                 }
                 .presentingDemoButton()
