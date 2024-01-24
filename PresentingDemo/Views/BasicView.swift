@@ -19,10 +19,7 @@ struct BasicView: View {
             NavigationStack {
                 ScrollView {
                     VStack(alignment: .leading, spacing: vstackSpacing) {
-                        Text("Alerts, Sheets, Dialogs")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                            .fontDesign(.rounded)
+                        section1Title
 
                         Group {
                             Button {
@@ -70,7 +67,8 @@ struct BasicView: View {
                                 presenter.presentConfirmationDialog(
                                     ConfirmationDialog(
                                         Text("Presenting"),
-                                        titleVisibility: .automatic, presenting: dialogDetail,
+                                        titleVisibility: .automatic,
+                                        presenting: dialogDetail,
                                         actions: { dialogDetail in
                                             Button(dialogDetail.button1name) {}
                                             Button(dialogDetail.button2name) {}
@@ -87,11 +85,8 @@ struct BasicView: View {
                         }
                         .presentingDemoButton()
 
-                        Text("Toasts")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                            .fontDesign(.rounded)
-                        
+                        section2Title
+
                         Grid {
                             GridRow {
                                 ForEach(DefaultToasts.allCases[..<3]) { toast in
@@ -151,14 +146,23 @@ struct BasicView: View {
         }
     }
 
+    private var section1Title: some View {
+        Text("Alerts, Sheets, Dialogs")
+            .presentingDemoTextStyle()
+    }
+
+    private var section2Title: some View {
+        Text("Toasts")
+            .presentingDemoTextStyle()
+    }
+
     private var basicToolbarView: some ToolbarContent {
         Group {
             ToolbarItem(placement: .navigationBarLeading) {
                 Text("Basic Presenting Demo")
                     .multilineTextAlignment(.center)
                     .font(.title)
-                    .fontWeight(.semibold)
-                    .fontDesign(.rounded)
+                    .presentingDemoTextStyle()
             }
         }
     }

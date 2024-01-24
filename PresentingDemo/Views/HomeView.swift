@@ -19,10 +19,7 @@ struct HomeView: View {
             NavigationStack {
                 ScrollView {
                     VStack(alignment: .leading, spacing: vstackSpacing) {
-                        Text("Alerts, Sheets, Dialogs")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                            .fontDesign(.rounded)
+                        section1Title
 
                         Group {
                             Button {
@@ -104,11 +101,8 @@ struct HomeView: View {
                         }
                         .presentingDemoButton()
 
-                        Text("Toasts")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                            .fontDesign(.rounded)
-                        
+                        section2Title
+
                         Grid {
                             GridRow {
                                 ForEach(DefaultToasts.allCases[..<3]) { toast in
@@ -168,14 +162,23 @@ struct HomeView: View {
         }
     }
 
+    private var section1Title: some View {
+        Text("Alerts, Sheets, Dialogs")
+            .presentingDemoTextStyle()
+    }
+
+    private var section2Title: some View {
+        Text("Toasts")
+            .presentingDemoTextStyle()
+    }
+
     private var toolbarView: some ToolbarContent {
         Group {
             ToolbarItem(placement: .navigationBarLeading) {
                 Text("Presenting Demo")
                     .multilineTextAlignment(.center)
                     .font(.title)
-                    .fontWeight(.semibold)
-                    .fontDesign(.rounded)
+                    .presentingDemoTextStyle()
             }
         }
     }
