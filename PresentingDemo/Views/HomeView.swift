@@ -9,7 +9,7 @@ import Presenting
 import SwiftUI
 
 struct HomeView: View {
-    @State private var dialogDetail: TestData? = TestData()
+    private var dialogDetail: TestData? = TestData()
 
     private let buttonHeight: CGFloat = 35
     private let vstackSpacing: CGFloat = 15
@@ -44,6 +44,7 @@ struct HomeView: View {
                                     .frame(maxWidth: .infinity)
                                     .frame(height: buttonHeight)
                             }
+                            .accessibilityIdentifier("ShowSettingsSheetButton")
 
                             Button {
                                 presenter.presentFullScreenCover(.lockedView)
@@ -52,6 +53,7 @@ struct HomeView: View {
                                     .frame(maxWidth: .infinity)
                                     .frame(height: buttonHeight)
                             }
+                            .accessibilityIdentifier("ShowFullScreenCoverButton")
 
                             Button {
                                 presenter.presentConfirmationDialog(

@@ -22,26 +22,36 @@ final class HomeViewUITests: XCTestCase {
 
         showAlertButton.tap()
 
-        let alert = app.alerts["Test Alert"]
+        let alert = app.alerts.firstMatch
         XCTAssertTrue(alert.exists)
     }
 
-    func testHomeViewAlertDisappears() {
+    func testHomeViewAlertDismisses() {
         let showAlertButton = app.scrollViews.otherElements.buttons["ShowAlertButton"]
         showAlertButton.tap()
-        let alert = app.alerts["Test Alert"]
+        let alert = app.alerts.firstMatch
 
         alert.scrollViews.otherElements.buttons["Yes"].tap()
+        let alertExists = alert.waitForExistence(timeout: 2)
 
-        XCTAssertFalse(alert.exists)
+        XCTAssertFalse(alertExists)
     }
 
     func testHomeViewShowSettingsSheetButtonShowsSheet() {
-        let showSettingsSheetButton = app.scrollViews.otherElements.buttons["Show Settings Sheet"]
+        let showSettingsSheetButton = app.scrollViews.otherElements.buttons["ShowSettingsSheetButton"]
 
         showSettingsSheetButton.tap()
         let settingsSheet = app.otherElements["SettingsSheet"]
 
         XCTAssertTrue(settingsSheet.exists)
+    }
+
+    func testHomeViewShowFullScreenCoverButtonShowsCover() {
+        let showFullScreenCoverButton = app.scrollViews.otherElements.buttons["ShowFullScreenCoverButton"]
+
+        showFullScreenCoverButton.tap()
+        let dismissFullScreenCoverButton = app/*@START_MENU_TOKEN@*/.buttons["LockedFullScreenCover"]/*[[".buttons[\"Dismiss Full Screen Cover\"]",".buttons[\"LockedFullScreenCover\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+
+        XCTAssertTrue(dismissFullScreenCoverButton.exists)
     }
 }
